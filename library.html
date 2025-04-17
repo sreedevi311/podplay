@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Playlist #1</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /*background: linear-gradient(to bottom, #8d22b8, #000);*/
+      color: white;
+      background: black;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+    .playlist-cover {
+      width: 180px;
+      height: 180px;
+      background-image: url('https://i.imgur.com/5Z6F9xK.png'); /* Sample image */
+      background-size: cover;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+    .playlist-info {
+      flex: 1;
+    }
+    .playlist-info h1 {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+    .playlist-info p {
+      color: #ccc;
+      margin: 5px 0;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+    }
+    .play-btn {
+      background-color:#8d22b8;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    .playlist-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      padding: 0 30px;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+    .song-title {
+      color:#8d22b8;
+      font-weight: bold;
+    }
+    .album-cover {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .song-info {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="playlist-cover"></div>
+    <div class="playlist-info">
+      <p>Public Playlist</p>
+      <h1>My Playlist #1</h1>
+      <p><strong>VIVEK POTNURU</strong> • 2 songs, 9 min 52 sec</p>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="play-btn">&#9658;</div>
+    <img src="https://i.imgur.com/5Z6F9xK.png" alt="Cover" width="50" style="margin-right: 10px;">
+    <button style="margin-right: 10px; background-color: #8d22b8; color: white;">+</button>
+    <button style="background-color: #8d22b8; color: white;">•••</button>
+  </div>
+
+  <table class="playlist-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Album</th>
+        <th>Date added</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody class="js-library">
+      <!--<tr>
+        <td>1</td>
+        <td>
+          <div class="song-info">
+            <img src="https://i.imgur.com/5Z6F9xK.png" class="album-cover" alt="Album Art" />
+            <div>
+              <div class="song-title">Die With A Smile</div>
+              <div>Lady Gaga, Bruno Mars</div>
+            </div>
+          </div>
+        </td>
+        <td>Die With A Smile</td>
+        <td>6 minutes ago</td>
+        <td>4:11</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <div class="song-info">
+            <img src="https://i.imgur.com/s8w3Iw1.jpg" class="album-cover" alt="Album Art" />
+            <div>
+              <div class="song-title">Agar Tum Saath Ho</div>
+              <div>Alka Yagnik, Arijit Singh</div>
+            </div>
+          </div>
+        </td>
+        <td>Tamasha</td>
+        <td>6 minutes ago</td>
+        <td>5:41</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>
+          <div class="song-info">
+            <img src="https://i.imgur.com/5Z6F9xK.png" class="album-cover" alt="Album Art" />
+            <div>
+              <div class="song-title">Die With A Smile</div>
+              <div>Lady Gaga, Bruno Mars</div>
+            </div>
+          </div>
+        </td>
+        <td>Die With A Smile</td>
+        <td>6 minutes ago</td>
+        <td>4:11</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <div class="song-info">
+            <img src="https://i.imgur.com/s8w3Iw1.jpg" class="album-cover" alt="Album Art" />
+            <div>
+              <div class="song-title">Agar Tum Saath Ho</div>
+              <div>Alka Yagnik, Arijit Singh</div>
+            </div>
+          </div>
+        </td>
+        <td>Tamasha</td>
+        <td>6 minutes ago</td>
+        <td>5:41</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>
+          <div class="song-info">
+            <img src="https://i.imgur.com/5Z6F9xK.png" class="album-cover" alt="Album Art" />
+            <div>
+              <div class="song-title">Die With A Smile</div>
+              <div>Lady Gaga, Bruno Mars</div>
+            </div>
+          </div>
+        </td>
+        <td>Die With A Smile</td>
+        <td>6 minutes ago</td>
+        <td>4:11</td>
+      </tr>-->
+    </tbody>
+  </table>
+<script src="library.js" type="module"></script>
+</body>
+</html>
