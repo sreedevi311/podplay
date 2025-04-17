@@ -10,15 +10,28 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <h2>Podplay</h2>
-      <ul class="nav">
-        <div><img src="images/menu-burger.png" alt=""></div>
-        <div><img src="images/home.png" alt="img" class="homeicon"></div>
-        <li class="active">Home</li>
-        <div><img src="images/category.png" alt="img"></div>
-        <li class="active">Categories</li>
-        <div><img src="images/library.png" alt="img" style="width: 1.5rem; height: 1.5rem;"></div>
-        <li class="active">Library</li>
+      <ul class="nav dropdown-container">
+        <div><button id="mainBtn" class="main-btn"><img src="images/menu-burger.png" alt=""></button></div>
+        <div id="dropdown" class="dropdown hidden">
+          <div><button class="drop-btn"><img src="images/home.png" alt="img" class="homeicon"></button></div>
+          <li class="active">Home</li>
+          <div><button class="drop-btn"><img src="images/category.png" alt="img"></button></div>
+          <li class="active">Categories</li>
+          <div><button class="drop-btn"><img src="images/library.png" alt="img" style="width: 1.5rem; height: 1.5rem;"></button></div>
+          <li class="active">Library</li>
+        </div>
+        
+        
+        
+
+        
+       
       </ul>
+
+      <div class="">
+        
+        
+      </div>
 <!--
       <ul class="song-list">
         <li><span>02</span> <img src="https://i.scdn.co/image/ab67656300005f1f774cbb2f0f34b755033c6365" alt="">sadhguru Podcast</li>
@@ -50,7 +63,10 @@
           <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="">
           <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
           <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="">
           <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
           <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="">
         </div>
       </section>
@@ -73,72 +89,8 @@
         <h3>Popular Podcasts</h3>
         <div class="scroll-wrapper">
           <button class="scroll-btn left" onclick="scrollLeftPodcasts()">&#10094;</button>
-          <div class="scroll-container" id="podcastScroll">
-            <!-- Podcast Card -->
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-1 subtitle-pod-1">
-              <img src="https://i.scdn.co/image/ab67656300005f1f8fa0d6e738816148bc64be8e" alt="Podcast Cover" />
-              <h4 id="title-pod-1">Bill Gates on India</h4>
-              <p id="subtitle-pod-1">Raj Shamani's Figuring Out</p>
-            </div>
-      
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-4 subtitle-pod-4">
-              <img src="https://i.scdn.co/image/ab67656300005f1fe5841c0bf9e30a9dce0034b6" alt="Podcast Cover" />
-              <h4 id="title-pod-4">Moment Of Silence</h4>
-              <p id="subtitle-pod-4">Sakshi and Naina</p>
-            </div>
-      
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-4 subtitle-pod-4">
-              <img src="https://i.scdn.co/image/ab67656300005f1f774cbb2f0f34b755033c6365" alt="Podcast Cover" />
-              <h4 id="title-pod-4">The Sadhguru Podcast</h4>
-              <p id="subtitle-pod-4">Sadhguru Official</p>
-            </div>
-      
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-4 subtitle-pod-4">
-              <img src="https://i.scdn.co/image/ab6765630000ba8a231f5b756e6a2eb0548a3505" alt="Podcast Cover" />
-              <h4 id="title-pod-4">The Game Of Thrones</h4>
-              <p id="subtitle-pod-4">House Of Dragon HBO</p>
-            </div>
-
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-2 subtitle-pod-2">
-              <img src="https://i.scdn.co/image/ab67656300005f1fe9970d128b980b95b88954d8" alt="Podcast Cover" />
-              <h4 id="title-pod-2">The Happy PawdCast</h4>
-              <p id="subtitle-pod-2">Sonali Bindre</p>
-            </div>
-
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-4 subtitle-pod-4">
-              <img src="https://i.scdn.co/image/ab67656300005f1f76f3ca0a28a1f15fe0646ac8" alt="Podcast Cover" />
-              <h4 id="title-pod-4">The Crime Show</h4>
-              <p id="subtitle-pod-4">Divay Agarwal</p>
-            </div>
-
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-3 subtitle-pod-3">
-              <img src="https://i.scdn.co/image/ab67656300005f1fbb9e2ec9d920f03423c98936" alt="Podcast Cover" />
-              <h4 id="title-pod-3">The Filmy Hustle</h4>
-              <p id="subtitle-pod-3">Akkshay Rathie</p>
-            </div>
-
-            <div class="podcast-card" role="button" tabindex="0"
-                aria-labelledby="title-pod-4 subtitle-pod-4">
-            <img src="https://i.scdn.co/image/ab67656300005f1f2f5074041f650f35e1abc236" alt="Podcast Cover" />
-            <h4 id="title-pod-4">Maname Nalama</h4>
-            <p id="subtitle-pod-4">A Tamil Podcast</p>
-            </div>
-
-            <div class="podcast-card" role="button" tabindex="0"
-                 aria-labelledby="title-pod-4 subtitle-pod-4">
-              <img src="https://i.scdn.co/image/ab67656300005f1f5a8cda29572ad4fe9e17623e" alt="Podcast Cover" />
-              <h4 id="title-pod-4">Zindagi Diaries</h4>
-              <p id="subtitle-pod-4">IVM Podcasts</p>
-            </div>
-      
-            <!-- Add more cards as needed -->
+          <div class="scroll-container js-scroll-container" id="podcastScroll">
+           
           </div>
           <button class="scroll-btn right" onclick="scrollRightPodcasts()">&#10095;</button>
         </div>
@@ -146,8 +98,8 @@
 
     <div class="container">
         <h2 class="title">Categories</h2>
-        <div class="grid">
-          <div class="card blue with-image">
+        <div class="grid js-grid">
+          <!--<div class="card blue with-image">
             <img src="https://t.scdn.co/images/7262179db37c498480ef06bfacb60310.jpeg" alt="Music Category">
             <span>Podcast Charts</span>
           </div>
@@ -181,6 +133,7 @@
             <img src="https://i.scdn.co/image/ab67fb8200005caf879a886d22672d9b5b987746" alt="Music Category">
             <span>Travel</span>
           </div>
+          
           <div class="card green with-image">
             <img src="https://i.scdn.co/image/ab67fb8200005caf79c2945c8841b281baa35454" alt="Music Category">
             <span>TV & Movies</span>
@@ -196,8 +149,9 @@
             <div class="card lightblue2 with-image">
               <img src="https://i.scdn.co/image/ab67fb8200005caf71ab47ac71efc219fa2cb171" alt="Music Category">
               <span>Nature & Noise</span>
-            </div>
+            </div>-->
         </div>
+        <a href="">see more</a>
     </div>
 
     </main>
@@ -222,6 +176,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
