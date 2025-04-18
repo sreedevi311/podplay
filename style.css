@@ -14,6 +14,7 @@ body {
   flex-direction: row;
 }
 .sidebar {
+  
   width: 130px;
   background: rgb(29, 29, 29);
   padding: 20px;
@@ -36,14 +37,18 @@ body {
 }
 .nav div{
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav button{
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: #121212;
-  border-radius:50%;
-  margin-bottom: 10px;
+  
 }
+/*
 .nav div:hover,.homeicon:hover{
   outline: none;
   border:2px solid #b537e7;
@@ -52,6 +57,7 @@ body {
   opacity: 70%;
   transition-duration: 1ms;
 }
+*/
 .homeicon{
   width: 40px;
   height: 40px;
@@ -75,6 +81,9 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 5px;
+}
+#mainBtnDiv{
+  margin-left: 30px;
 }
 .main {
   flex: 1;
@@ -426,8 +435,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #007bff;
-  color: white;
+  background-color:black;
   font-size: 24px;
   border: none;
   cursor: pointer;
@@ -437,7 +445,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 70px;
+  top: 80px;
   left: 0;
   gap: 10px;
   transition: all 0.3s ease;
