@@ -1,4 +1,9 @@
 import {categories, podcasts} from "./data.js";
+export let cart=JSON.parse(localStorage.getItem('library'))||[{id:'id2',
+                                                              image:"https://i.scdn.co/image/ab67656300005f1fe5841c0bf9e30a9dce0034b6",
+                                                              name:"Moment Of Silence",
+                                                              author:"Sakshi and Naina",
+                                                              duration:'30min 2sec'}];
 
 const playBtn = document.getElementById('play-pause');
 let playing = false;
@@ -41,8 +46,9 @@ mainBtn.addEventListener("click", () => {
       <div class="podcast-card" role="button" tabindex="0"
                  aria-labelledby="title-pod-4 subtitle-pod-4">
               <img src="${podcast.image}" alt="Podcast Cover" />
-              <h4 id="title-pod-4">${podcast.name}</h4>
-              <p id="subtitle-pod-4">${podcast.author}</p>
+              <h4 id="title-h4">${podcast.name}</h4>
+              <span  id="subtitle-p"><p>${podcast.author}</p></span>
+              <button class="add-to-library" data-id="${podcast.id}">Add</button>
             </div>
     `;
  });
@@ -63,18 +69,3 @@ mainBtn.addEventListener("click", () => {
  document.querySelector('.js-grid').innerHTML = completeHTML;
 
  
-function displayCategories(){
-  let fullHTML='';
-  let i=1;
-  categories.forEach( (categorie) => {
-      fullHTML+=
-      `
-        <div class="card color-${i} with-image">
-              <img src="${categorie.image}" alt="Music Category">
-              <span>${categorie.name}</span>
-        </div>
-        `;
-  });
-      
-  document.querySelector('.js-grid').innerHTML=`${fullHTML}`;
-}
