@@ -1,8 +1,20 @@
 import { podcasts } from "./data.js";
+import * as category from "./categorydata.js";
+
+export let library=JSON.parse(localStorage.getItem('Library'))||[{
+  id:'id2',
+  image:"https://i.scdn.co/image/ab67656300005f1fe5841c0bf9e30a9dce0034b6",
+  name:"Moment Of Silence",
+  author:"Sakshi and Naina",
+  duration:'30min 2sec'
+}];
+
 
  let fullHTML='';
   let i=1;
-  podcasts.forEach( (podcast) => {
+  let firstPodcast;
+  library.forEach( (podcast) => {
+      if(i===1) firstPodcast=podcast;
       fullHTML+=
       `<tr>
         <td>${i}</td>
@@ -24,3 +36,47 @@ import { podcasts } from "./data.js";
   });
       
   document.querySelector('.js-library').innerHTML=`${fullHTML}`;
+  let img=document.createElement("img");
+  let source=firstPodcast.image;
+  img.src=source;
+  img.alt="cover";
+  img.style.width="50px";
+  document.querySelector('.image-div').appendChild(img);
+  
+  export function addToLibrary(id,name){
+      let matchingItem;
+      let existingItem;
+      let variable;
+      console.log(name);
+      if(name!=='podcasts'){
+        variable=category[name];
+        console.log(variable);
+      }else{
+        variable=name;
+      }
+      variable.forEach( (item)=>{
+          if(item.id===id){
+              matchingItem=item;
+          }
+      });
+     console.log(matchingItem);
+      library.forEach( (item)=>{
+        if(item.id===matchingItem.id){
+            existingItem=item;
+        }
+      });
+
+      if(!existingItem){ 
+        library.push({
+          id:matchingItem.id,
+          image:matchingItem.image,
+          name:matchingItem.name,
+          author:matchingItem.author,
+          duration:matchingItem.duration
+      }); 
+      }
+      
+      console.log(library);
+      localStorage.setItem('Library',JSON.stringify(library));
+  }
+  
