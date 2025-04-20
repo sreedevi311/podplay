@@ -1,10 +1,7 @@
 import {categories, podcasts} from "./data.js";
-export let cart=JSON.parse(localStorage.getItem('library'))||[{id:'id2',
-                                                              image:"https://i.scdn.co/image/ab67656300005f1fe5841c0bf9e30a9dce0034b6",
-                                                              name:"Moment Of Silence",
-                                                              author:"Sakshi and Naina",
-                                                              duration:'30min 2sec'}];
+import { addToLibrary } from "./library.js";
 
+export function playBtn(){
 const playBtn = document.getElementById('play-pause');
 let playing = false;
 
@@ -33,12 +30,12 @@ mainBtn.addEventListener("click", () => {
   dropdown.classList.toggle("hidden");
   dropdown.classList.toggle("show");
 });
-
-
+}
+//playBtn();
 
 
 //display all products in home page
-
+export function renderHomePagePodcasts(){
  let totalHTML='';
  podcasts.forEach( (podcast) => {
     totalHTML+=
@@ -48,14 +45,16 @@ mainBtn.addEventListener("click", () => {
               <img src="${podcast.image}" alt="Podcast Cover" />
               <h4 id="title-h4">${podcast.name}</h4>
               <span  id="subtitle-p"><p>${podcast.author}</p></span>
-              <button class="add-to-library" data-id="${podcast.id}">Add</button>
+              <button class="add-to-library js-add-to-library" id="${podcast.id}" data-id="${podcast.id}" data-name="podcasts">Add</button>
             </div>
     `;
  });
 
  document.querySelector('.js-scroll-container').innerHTML=`${totalHTML}`;
+}
+//renderHomePagePodcasts();
 
-
+export function renderHomePageCategories(){
  let completeHTML = '';
  for (let i = 0; i < categories.length && i < 8; i++) {
      completeHTML += `
@@ -65,7 +64,32 @@ mainBtn.addEventListener("click", () => {
        </div>
      `;
  }
- 
  document.querySelector('.js-grid').innerHTML = completeHTML;
+}
+//renderHomePageCategories();
 
+ export function addToLibraryButtonsClicks(){
+     document.querySelectorAll('.js-add-to-library').forEach( (button)=>{
+         button.addEventListener('click',()=>{
+             const {id,name}=button.dataset;
+             addedToLibraryMsg(id);
+            
+             addToLibrary(id,name);
+             
+         });
+     });
+ }
  
+ addToLibraryButtonsClicks();
+
+
+ export function addedToLibraryMsg(id){
+  const msgDiv=document.getElementById(`${id}`);
+      if(msgDiv.innerHTML==='Add'){
+        msgDiv.innerHTML='Added';
+        msgDiv.classList.add('added-to-library');
+    }else{
+        msgDiv.innerHTML='Add';
+        msgDiv.classList.remove('added-to-library');
+    }
+}
