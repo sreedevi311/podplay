@@ -1,15 +1,68 @@
 import * as category from "./categorydata.js";
 
-function categoryClicks(){
-  document.querySelectorAll('.js-card').forEach( (div)=>{
-      div.addEventListener('click',()=>{
-          let name=div.getAttribute('data-name');
-          console.log(name);
-          //generateCategoryPage(name);
-      });
+export function generateCategoryPage(name) {
+  let row1 = '';
+  let row2='';
+  let completeHTML='';
+  let cleanName = name.replace(/\s+/g, '');
+  let variable = category[cleanName];
+
+  if (!variable) {
+    console.error(`No data for category: ${cleanName}`);
+    return;
+  }
+
+  variable.forEach(categorie => {
+    row1 += `
+      <div class="podcast-item">
+        <img src="${categorie.image}" alt="${categorie.name}" />
+        <div class="podcast-title">${categorie.name}</div>
+      </div>
+    `;
   });
+
+  for(let i=variable.length-1;i>=0;i--){
+    const categorie=variable[i];
+    row2 += `
+      <div class="podcast-item">
+        <img src="${categorie.image}" alt="${categorie.name}" />
+        <div class="podcast-title">${categorie.name}</div>
+      </div>
+    `
+  }
+  completeHTML=row1+row2;
+  document.querySelector('.js-podcast-list').innerHTML = completeHTML;
+  document.querySelector('.header').textContent = name;
 }
-categoryClicks();
+
+// Run this after the page loads
+window.addEventListener("DOMContentLoaded", () => {
+  const categoryName = sessionStorage.getItem("selectedCategory");
+  const colorClass = sessionStorage.getItem("selectedColorClass");
+
+  if (categoryName && colorClass) {
+    generateCategoryPage(categoryName);
+
+    const tempDiv = document.createElement("div");
+    tempDiv.className = colorClass;
+    document.body.appendChild(tempDiv);
+
+    const computedColor = getComputedStyle(tempDiv).backgroundColor;
+    console.log("🎨 Computed color:", computedColor);
+
+    // Apply the background gradient with !important to override any CSS
+    document.body.style.setProperty(
+      "background",
+      `linear-gradient(to bottom, ${computedColor}, black)`,
+      "important"
+    );
+
+    tempDiv.remove();
+  }
+});
+
+  
+
 /*
 function generateCategoryPage(name){
 let fullHTML='';
