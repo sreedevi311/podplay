@@ -1,4 +1,7 @@
 import * as category from "./categorydata.js";
+import { addToLibraryButtonsClicks,addedToLibraryMsg } from "./script.js";
+
+
 
 export function generateCategoryPage(name) {
   let row1 = '';
@@ -17,6 +20,7 @@ export function generateCategoryPage(name) {
       <div class="podcast-item">
         <img src="${categorie.image}" alt="${categorie.name}" />
         <div class="podcast-title">${categorie.name}</div>
+        <button class="add-to-library js-add-to-library" id="${categorie.id}" data-id="${categorie.id}" data-name="${cleanName}">Add</button>
       </div>
     `;
   });
@@ -27,6 +31,7 @@ export function generateCategoryPage(name) {
       <div class="podcast-item">
         <img src="${categorie.image}" alt="${categorie.name}" />
         <div class="podcast-title">${categorie.name}</div>
+         <button class="add-to-library js-add-to-library" id="${categorie.id}" data-id="${categorie.id}" data-name="${cleanName}">Add</button>
       </div>
     `
   }
@@ -58,6 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
     );
 
     tempDiv.remove();
+    addToLibraryButtonsClicks();
   }
 });
 
