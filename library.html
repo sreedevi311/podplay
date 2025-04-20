@@ -8,9 +8,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      /*background: linear-gradient(to bottom, #8d22b8, #000);*/
+      background:#000;
       color: white;
-      background: black;
     }
     .header {
       display: flex;
@@ -78,6 +77,9 @@
       display: flex;
       align-items: center;
     }
+    .image-div{
+      margin-right: 20px;
+    }
   </style>
 </head>
 <body>
@@ -93,7 +95,7 @@
 
   <div class="controls">
     <div class="play-btn">&#9658;</div>
-    <img src="https://i.imgur.com/5Z6F9xK.png" alt="Cover" width="50" style="margin-right: 10px;">
+    <div class="image-div"></div>
     <button style="margin-right: 10px; background-color: #8d22b8; color: white;">+</button>
     <button style="background-color: #8d22b8; color: white;">•••</button>
   </div>
@@ -109,81 +111,7 @@
       </tr>
     </thead>
     <tbody class="js-library">
-      <!--<tr>
-        <td>1</td>
-        <td>
-          <div class="song-info">
-            <img src="https://i.imgur.com/5Z6F9xK.png" class="album-cover" alt="Album Art" />
-            <div>
-              <div class="song-title">Die With A Smile</div>
-              <div>Lady Gaga, Bruno Mars</div>
-            </div>
-          </div>
-        </td>
-        <td>Die With A Smile</td>
-        <td>6 minutes ago</td>
-        <td>4:11</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>
-          <div class="song-info">
-            <img src="https://i.imgur.com/s8w3Iw1.jpg" class="album-cover" alt="Album Art" />
-            <div>
-              <div class="song-title">Agar Tum Saath Ho</div>
-              <div>Alka Yagnik, Arijit Singh</div>
-            </div>
-          </div>
-        </td>
-        <td>Tamasha</td>
-        <td>6 minutes ago</td>
-        <td>5:41</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <div class="song-info">
-            <img src="https://i.imgur.com/5Z6F9xK.png" class="album-cover" alt="Album Art" />
-            <div>
-              <div class="song-title">Die With A Smile</div>
-              <div>Lady Gaga, Bruno Mars</div>
-            </div>
-          </div>
-        </td>
-        <td>Die With A Smile</td>
-        <td>6 minutes ago</td>
-        <td>4:11</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>
-          <div class="song-info">
-            <img src="https://i.imgur.com/s8w3Iw1.jpg" class="album-cover" alt="Album Art" />
-            <div>
-              <div class="song-title">Agar Tum Saath Ho</div>
-              <div>Alka Yagnik, Arijit Singh</div>
-            </div>
-          </div>
-        </td>
-        <td>Tamasha</td>
-        <td>6 minutes ago</td>
-        <td>5:41</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>
-          <div class="song-info">
-            <img src="https://i.imgur.com/5Z6F9xK.png" class="album-cover" alt="Album Art" />
-            <div>
-              <div class="song-title">Die With A Smile</div>
-              <div>Lady Gaga, Bruno Mars</div>
-            </div>
-          </div>
-        </td>
-        <td>Die With A Smile</td>
-        <td>6 minutes ago</td>
-        <td>4:11</td>
-      </tr>-->
+
     </tbody>
   </table>
 <script src="library.js" type="module"></script>
