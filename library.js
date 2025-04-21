@@ -1,4 +1,4 @@
-import { podcasts } from "./data.js";
+import * as podcasts from "./data.js";
 import * as category from "./categorydata.js";
 
 export let library=JSON.parse(localStorage.getItem('Library'))||[{
@@ -9,7 +9,7 @@ export let library=JSON.parse(localStorage.getItem('Library'))||[{
   duration:'30min 2sec'
 }];
 
-
+export function renderLibraryPage(){
  let fullHTML='';
   let i=1;
   let firstPodcast;
@@ -42,6 +42,12 @@ export let library=JSON.parse(localStorage.getItem('Library'))||[{
   img.alt="cover";
   img.style.width="50px";
   document.querySelector('.image-div').appendChild(img);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  renderLibraryPage();
+});
+
   
   export function addToLibrary(id,name){
       let matchingItem;
@@ -52,7 +58,7 @@ export let library=JSON.parse(localStorage.getItem('Library'))||[{
         variable=category[name];
         console.log(variable);
       }else{
-        variable=name;
+        variable=podcasts[name];
       }
       variable.forEach( (item)=>{
           if(item.id===id){
