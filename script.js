@@ -31,7 +31,10 @@ mainBtn.addEventListener("click", () => {
   dropdown.classList.toggle("show");
 });
 }
-//playBtn();
+window.addEventListener("DOMContentLoaded", () => {
+  playBtn();
+});
+
 
 
 //display all products in home page
@@ -52,7 +55,10 @@ export function renderHomePagePodcasts(){
 
  document.querySelector('.js-scroll-container').innerHTML=`${totalHTML}`;
 }
-//renderHomePagePodcasts();
+window.addEventListener("DOMContentLoaded", () => {
+  renderHomePagePodcasts();
+});
+
 
 export function renderHomePageCategories(){
  let completeHTML = '';
@@ -66,7 +72,10 @@ export function renderHomePageCategories(){
  }
  document.querySelector('.js-grid').innerHTML = completeHTML;
 }
-//renderHomePageCategories();
+window.addEventListener("DOMContentLoaded", () => {
+  renderHomePageCategories();
+});
+
 
  export function addToLibraryButtonsClicks(){
      document.querySelectorAll('.js-add-to-library').forEach( (button)=>{
