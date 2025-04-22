@@ -2,10 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Spotify Clone</title>
+  <title>Podplay</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script>
+    function goHome() {
+      window.open('homepage.html', '_self');
+  }
+  function goCategories() {
+    window.open('categories.html', '_blank');
+  }
+  function goLibrary() {
+    window.open('library.html', '_blank');
+  }
+  </script>
   <div class="app">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -13,33 +24,14 @@
       <ul class="nav dropdown-container">
         <div id="mainBtnDiv"><button id="mainBtn" class="main-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/menu-burger.png?raw=true" alt=""></button></div>
         <div id="dropdown" class="dropdown hidden">
-          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/home.png?raw=true" alt="img" class="homeicon"></button></div>
+          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/home.png?raw=true" alt="img" class="homeicon" onclick="goHome()"></button></div>
           <li class="active">Home</li>
-          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/category.png?raw=true" alt="img"></button></div>
+          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/category.png?raw=true" alt="img" onclick="goCategories()"></button></div>
           <li class="active">Categories</li>
-          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/library.png?raw=true" alt="img" style="width: 1.5rem; height: 1.5rem;"></button></div>
+          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/library.png?raw=true" alt="img" style="width: 1.5rem; height: 1.5rem;" onclick="goLibrary()"></button></div>
           <li class="active">Library</li>
         </div>
-        
-        
-        
-
-        
-       
       </ul>
-
-      <div class="">
-        
-        
-      </div>
-<!--
-      <ul class="song-list">
-        <li><span>02</span> <img src="https://i.scdn.co/image/ab67656300005f1f774cbb2f0f34b755033c6365" alt="">sadhguru Podcast</li>
-        <li><span>01</span> <img src="https://i.scdn.co/image/ab67656300005f1f2f5074041f650f35e1abc236" alt="">Maname Nalama</li>
-        <li><span>03</span> <img src="https://i.scdn.co/image/ab67656300005f1fbb9e2ec9d920f03423c98936" alt="">Filmy Hustle</li>
-        <li><span>04</span> <img src="https://i.scdn.co/image/ab67656300005f1f76f3ca0a28a1f15fe0646ac8" alt="">Crime Show</li>
-        <li><span>05</span> <img src="https://i.scdn.co/image/ab67656300005f1fe9970d128b980b95b88954d8" alt="">Happy Pawdcast</li>
-      </ul>-->
     </aside>
 
     <!-- Main Content -->
@@ -60,29 +52,16 @@
       <section class="scroll-section">
         <h3>Popular Artists</h3>
         <div class="scroll-container small">
-          <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
-          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="">
+          <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="" class="artists">
         </div>
       </section>
-
-      <!-- Artist Section 
-      <section class="artist-section">
-        <div class="artist-info">
-          <h1>Alen Walker - Fade</h1>
-          <p>You were the shadow to my light... Wanna see us alive</p>
-          <div class="buttons">
-            <button class="play-btn">PLAY</button>
-            <button class="follow-btn">FOLLOW</button>
-          </div>
-        </div>
-        <img src="https://i.scdn.co/image/ab67616100005174bde1c4c2597c8ab6c24d0e5a" class="artist-img" alt="Alan Walker">
-      </section>-->
 
       <!-- Popular Songs -->
       <section class="popular-podcasts">
@@ -99,66 +78,78 @@
     <div class="container">
         <h2 class="title">Categories</h2>
         <div class="grid js-grid">
-          <!--<div class="card blue with-image">
-            <img src="https://t.scdn.co/images/7262179db37c498480ef06bfacb60310.jpeg" alt="Music Category">
-            <span>Podcast Charts</span>
-          </div>
           
-          <div class="card purple with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005caf194fec0fdc197fb9e4fe8e64" alt="Music Category">
-            <span>New Releases</span>
-          </div>
-          <div class="card red with-image">
-            <img src="https://i.scdn.co/image/9af79fd06e34dea3cd27c4e1cd6ec7343ce20af4" alt="Music Category">
-            <span>Video Podcasts</span>
-          </div>
-          <div class="card cement with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005caf6af6d83c78493644c9b0627b" alt="Music Category">
-            <span>Workout</span>
-          </div>
-          <div class="card gray with-image">
-            <img src="https://i.scdn.co/image/e227cd9674618024276c65f1213fb05af34cf512" alt="Music Category">
-            <span>Business & Technology</span>
-          </div>
-          <div class="card purple2 with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005cafdad1281e13697e8d8cf8f347" alt="Music Category">
-            <span>Educational</span>
-          </div>
-
-          <div class="card brown with-image">
-            <img src="https://t.scdn.co/images/7262179db37c498480ef06bfacb60310.jpeg" alt="Music Category">
-            <span>Devotional</span>
-          </div>
-          <div class="card blue with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005caf879a886d22672d9b5b987746" alt="Music Category">
-            <span>Travel</span>
-          </div>
-          
-          <div class="card green with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005caf79c2945c8841b281baa35454" alt="Music Category">
-            <span>TV & Movies</span>
-          </div>
-          <div class="card darkred with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005cafacbcb985978c387411d69e4f" alt="Music Category">
-            <span>Cooking & Dining</span>
-          </div>
-          <div class="card violet2 with-image">
-            <img src="https://i.scdn.co/image/ab67fb8200005caf3a3e91f32b562c1c85af3288" alt="Music Category">
-            <span>Indian Classical</span>
-          </div>
-            <div class="card lightblue2 with-image">
-              <img src="https://i.scdn.co/image/ab67fb8200005caf71ab47ac71efc219fa2cb171" alt="Music Category">
-              <span>Nature & Noise</span>
-            </div>-->
         </div>
-        <a href="">see more</a>
+        <button class="see-more" onclick="goCategories()" style="width:100px; margin-top:20px">see more</button>
+
+        
+  <section class="footer">
+    <div class="footer-top">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">For the Record</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Communities</h4>
+        <ul>
+          <li><a href="#">For Artists</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Vendors</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Useful links</h4>
+        <ul>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Free Mobile App</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Podplay Plans</h4>
+        <ul>
+          <li><a href="#">Premium Individual</a></li>
+          <li><a href="#">Premium Duo</a></li>
+          <li><a href="#">Premium Family</a></li>
+          <li><a href="#">Premium Student</a></li>
+          <li><a href="#">Podplay Free</a></li>
+        </ul>
+      </div>
+      <div class="footer-icons">
+        <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png" alt="Twitter"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook"></a>
+      </div>
+    </div>
+  
+    <div class="footer-divider"></div>
+  
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">Legal</a>
+        <a href="#">Safety & Privacy Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies</a>
+        <a href="#">About Ads</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="footer-copy">© 2025 Podplay AB</div>
+    </div>
+  </section>
+  
     </div>
 
     </main>
   </div>
 
+
   <!-- Footer Player -->
-  <footer class="footer">
+  <footer class="footer-2">
     <div class="footer-left">
       <img src="https://i.scdn.co/image/ab67656300005f1f76f3ca0a28a1f15fe0646ac8" alt="">
       <div class="song-info">
