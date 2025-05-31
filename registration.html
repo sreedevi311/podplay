@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            background-image: url("bg3.jpg");
+            background-size:cover ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: rgb(255,255,255,0.3);
+            border:1px solid white;
+            padding: 40px;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            color: #bc6bdb;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-group input:focus {
+            border-color: #bc6bdb;
+            outline: none;
+        }
+        .form-group .error {
+            color: red;
+            font-size: 12px;
+        }
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #b537e7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-button:hover {
+            background-color: #9d30c9;
+        }
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .toggle-link a {
+            color: #bc6bdb;
+            text-decoration: none;
+        }
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function goHome() {
+      window.open('homepage.html', '_blank');
+  }
+    </script>
+    <div class="form-container" id="formContainer">
+        <h2 id="formTitle">Sign Up</h2>
+        <form id="authForm">
+            <!-- Email or Phone Field -->
+            <div class="form-group">
+                <label for="emailOrPhone">Email or Phone Number</label>
+                <input type="text" id="emailOrPhone" name="emailOrPhone" placeholder="Enter your email or phone">
+                <div class="error" id="emailOrPhoneError"></div>
+            </div>
+
+            <!-- Username Field (for Sign Up) -->
+            <div class="form-group" id="usernameGroup">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username">
+                <div class="error" id="usernameError"></div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <div class="error" id="passwordError"></div>
+            </div>
+
+            <!-- Confirm Password Field (Only for Sign Up) -->
+            <div class="form-group" id="confirmPasswordGroup">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+
+            <button type="submit" class="form-button" id="submitButton" onclick="goHome()">Sign Up</button>
+        </form>
+
+        <div class="toggle-link">
+            <p id="toggleText">
+                Already have an account? <a href="#" id="toggleLink">Login</a>
+            </p>
+        </div>
+    </div>
+<script>
+    const formContainer = document.getElementById('formContainer');
+const formTitle = document.getElementById('formTitle');
+const authForm = document.getElementById('authForm');
+const toggleText = document.getElementById('toggleText');
+const submitButton = document.getElementById('submitButton');
+
+const emailOrPhoneInput = document.getElementById('emailOrPhone');
+const passwordInput = document.getElementById('password');
+const usernameGroup = document.getElementById('usernameGroup');
+const usernameInput = document.getElementById('username');
+const confirmPasswordGroup = document.getElementById('confirmPasswordGroup');
+const confirmPasswordInput = document.getElementById('confirmPassword');
+
+const emailOrPhoneError = document.getElementById('emailOrPhoneError');
+const passwordError = document.getElementById('passwordError');
+const confirmPasswordError = document.getElementById('confirmPasswordError');
+const usernameError = document.getElementById('usernameError');
+
+// Function to reset errors and form fields
+function resetForm() {
+    emailOrPhoneError.textContent = '';
+    passwordError.textContent = '';
+    confirmPasswordError.textContent = '';
+    usernameError.textContent = '';
+    emailOrPhoneInput.value = '';
+    passwordInput.value = '';
+    confirmPasswordInput.value = '';
+    usernameInput.value = '';
+}
+
+// Toggle between Sign Up and Login forms
+function toggleForm() {
+    const isLogin = formTitle.textContent === "Login";
+
+    if (isLogin) {
+        formTitle.textContent = "Sign Up";
+        submitButton.textContent = "Sign Up";
+        toggleText.innerHTML = 'Already have an account? <a href="#" id="toggleLink">Login</a>';
+        
+        // Show fields for Sign Up
+        usernameGroup.style.display = 'block';
+        confirmPasswordGroup.style.display = 'block';
+        resetForm();
+    } else {
+        formTitle.textContent = "Login";
+        submitButton.textContent = "Login";
+        toggleText.innerHTML = 'Need an account? <a href="#" id="toggleLink">Sign Up</a> <br> <br> <a href="#" id="toggleLink">Forgot password?</a>';
+        
+        // Show fields for Login
+        usernameGroup.style.display = 'none';
+        confirmPasswordGroup.style.display = 'none';
+        resetForm();
+    }
+
+    // Rebind the toggle link event listener to the new "Sign Up" or "Login" link
+    const newToggleLink = document.getElementById('toggleLink');
+    newToggleLink.removeEventListener('click', toggleForm);
+    newToggleLink.addEventListener('click', toggleForm);
+}
+
+// Initialize the toggle link event listener
+const initialToggleLink = document.getElementById('toggleLink');
+initialToggleLink.addEventListener('click', toggleForm);
+
+// Form validation
+authForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    let isValid = true;
+
+    const emailOrPhoneValue = emailOrPhoneInput.value.trim();
+    const passwordValue = passwordInput.value.trim();
+    const confirmPasswordValue = confirmPasswordInput.value.trim();
+    const usernameValue = usernameInput.value.trim();
+
+    // Reset errors
+    emailOrPhoneError.textContent = '';
+    passwordError.textContent = '';
+    confirmPasswordError.textContent = '';
+    usernameError.textContent = '';
+
+    // Email or Phone validation
+    if (!emailOrPhoneValue) {
+        emailOrPhoneError.textContent = 'Email or phone number is required.';
+        isValid = false;
+    }
+
+    // Password validation
+    if (!passwordValue) {
+        passwordError.textContent = 'Password is required.';
+        isValid = false;
+    }
+
+    // Username validation for Sign Up
+    if (formTitle.textContent === 'Sign Up' && !usernameValue) {
+        usernameError.textContent = 'Username is required.';
+        isValid = false;
+    }
+
+    // Confirm password validation for Sign Up
+    if (formTitle.textContent === 'Sign Up' && passwordValue !== confirmPasswordValue) {
+        confirmPasswordError.textContent = 'Passwords do not match.';
+        isValid = false;
+    }
+
+    if (isValid) {
+        alert('Form submitted successfully!');
+        // Handle actual form submission (e.g., via AJAX, API request)
+    }
+});
+
+</script>
+
+</body>
+</html>

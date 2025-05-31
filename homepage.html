@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Podplay</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+    function goHome() {
+      window.open('homepage.html', '_self');
+  }
+  function goCategories() {
+    window.open('categories.html', '_blank');
+  }
+  function goLibrary() {
+    window.open('library.html', '_blank');
+  }
+  </script>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Podplay</h2>
+      <ul class="nav dropdown-container">
+        <div id="mainBtnDiv"><button id="mainBtn" class="main-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/menu-burger.png?raw=true" alt=""></button></div>
+        <div id="dropdown" class="dropdown hidden">
+          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/home.png?raw=true" alt="img" class="homeicon" onclick="goHome()"></button></div>
+          <li class="active">Home</li>
+          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/category.png?raw=true" alt="img" onclick="goCategories()"></button></div>
+          <li class="active">Categories</li>
+          <div><button class="drop-btn"><img src="https://github.com/sreedevi311/podplay/blob/main/library.png?raw=true" alt="img" style="width: 1.5rem; height: 1.5rem;" onclick="goLibrary()"></button></div>
+          <li class="active">Library</li>
+        </div>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Top Bar -->
+      <div class="topbar">
+        <nav>
+          <a href="#" class="active">Discover</a>
+          
+        </nav>
+        <div class="search-profile">
+          <input type="text" placeholder="Search..." />
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile" alt="User">
+        </div>
+      </div>
+
+      <!-- Popular Artists -->
+      <section class="scroll-section">
+        <h3>Popular Artists</h3>
+        <div class="scroll-container small">
+          <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="artists">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="" class="artists">
+        </div>
+      </section>
+
+      <!-- Popular Songs -->
+      <section class="popular-podcasts">
+        <h3>Popular Podcasts</h3>
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" onclick="scrollLeftPodcasts()">&#10094;</button>
+          <div class="scroll-container js-scroll-container" id="podcastScroll">
+           
+          </div>
+          <button class="scroll-btn right" onclick="scrollRightPodcasts()">&#10095;</button>
+        </div>
+      </section>
+
+    <div class="container">
+        <h2 class="title">Categories</h2>
+        <div class="grid js-grid">
+          
+        </div>
+        <button class="see-more" onclick="goCategories()" style="width:100px; margin-top:20px">see more</button>
+
+        
+  <section class="footer">
+    <div class="footer-top">
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">For the Record</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Communities</h4>
+        <ul>
+          <li><a href="#">For Artists</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Vendors</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Useful links</h4>
+        <ul>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Free Mobile App</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Podplay Plans</h4>
+        <ul>
+          <li><a href="#">Premium Individual</a></li>
+          <li><a href="#">Premium Duo</a></li>
+          <li><a href="#">Premium Family</a></li>
+          <li><a href="#">Premium Student</a></li>
+          <li><a href="#">Podplay Free</a></li>
+        </ul>
+      </div>
+      <div class="footer-icons">
+        <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter--v1.png" alt="Twitter"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook"></a>
+      </div>
+    </div>
+  
+    <div class="footer-divider"></div>
+  
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">Legal</a>
+        <a href="#">Safety & Privacy Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies</a>
+        <a href="#">About Ads</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="footer-copy">© 2025 Podplay AB</div>
+    </div>
+  </section>
+  
+    </div>
+
+    </main>
+  </div>
+
+
+  <!-- Footer Player -->
+  <footer class="footer-2">
+    <div class="footer-left">
+      <img src="https://i.scdn.co/image/ab67656300005f1f76f3ca0a28a1f15fe0646ac8" alt="">
+      <div class="song-info">
+        <p>Crime Show</p>
+        <small>Divay Agarwal</small>
+      </div>
+    </div>
+    <div class="footer-center">
+      <button id="play-pause">▶</button>
+      <input type="range" value="0" id="seek" />
+      <span>0:00</span>
+    </div>
+    <div class="footer-right">
+      🔊
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

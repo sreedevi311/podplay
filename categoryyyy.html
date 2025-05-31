@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podcasts Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(0, 0, 0);
+      color: white;
+    }
+    .header {
+      background:linear-gradient( rgb(39, 133, 106),rgb(25, 88, 70));
+      padding: 60px 0px 0px 30px;
+      font-size: 60px;
+      font-weight: bold;
+      height: 100px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 20px;
+      margin-left: 20px;
+    }
+    .podcast-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      justify-content: center;
+    }
+    .podcast-item {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      min-width: 160px;
+      max-width: 160px;
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s;
+    }
+    .podcast-item:hover {
+      transform: scale(1.05);
+    }
+    .podcast-item img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .podcast-title {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .podcast-list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="header">Podcast New Releases</div>
+  <div style="background: linear-gradient(rgb(25, 88, 70),black); height: 250px;">
+  <div class="section-title">Best episodes of the week</div>
+  <div class="podcast-list">
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1f8fa0d6e738816148bc64be8e" alt="Podcast 1" />
+      <div class="podcast-title">Bill Gates on India</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1fe5841c0bf9e30a9dce0034b6" alt="Podcast 2" />
+      <div class="podcast-title">Moment Of Silence</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1f774cbb2f0f34b755033c6365" alt="Podcast 3" />
+      <div class="podcast-title">The Sadhguru Podcast</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab6765630000ba8a231f5b756e6a2eb0548a3505" alt="Podcast 4" />
+      <div class="podcast-title">The Game Of Thrones</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1fe9970d128b980b95b88954d8" alt="Podcast 5" />
+      <div class="podcast-title">The Happy PawdCast</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1f76f3ca0a28a1f15fe0646ac8" alt="Podcast 5" />
+      <div class="podcast-title">The Crime Show</div>
+    </div>
+
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1f76f3ca0a28a1f15fe0646ac8" alt="Podcast 5" />
+      <div class="podcast-title">The Crime Show</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1fe9970d128b980b95b88954d8" alt="Podcast 5" />
+      <div class="podcast-title">The Happy PawdCast</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab6765630000ba8a231f5b756e6a2eb0548a3505" alt="Podcast 4" />
+      <div class="podcast-title">The Game Of Thrones</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1f774cbb2f0f34b755033c6365" alt="Podcast 3" />
+      <div class="podcast-title">The Sadhguru Podcast</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1fe5841c0bf9e30a9dce0034b6" alt="Podcast 2" />
+      <div class="podcast-title">Moment Of Silence</div>
+    </div>
+    <div class="podcast-item">
+      <img src="https://i.scdn.co/image/ab67656300005f1f8fa0d6e738816148bc64be8e" alt="Podcast 1" />
+      <div class="podcast-title">Bill Gates on India</div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
